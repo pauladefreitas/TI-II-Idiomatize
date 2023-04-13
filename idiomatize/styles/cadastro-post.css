@@ -1,0 +1,93 @@
+:root {
+    /* -- Cores -- */
+    --azul-marca: #6FD3E7;
+    --azul-link: #46A6C9;
+    --azul-rodape: #141C24;
+    --branco-puro: #FFFFFF;
+    --cinza-azulado: #CBD3D9;
+    --cinza-claro-fundo: #FAFAFA;
+    --cinza-claro-borda: #DBDBDB;
+    --cinza-marcado: #98A0A8;
+    --fonte-cor: #3C4F5E;
+    --laranja-marca: #F16723;
+    --vermelho-erro: #BB2525;
+
+    /* -- Fontes -- */
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+.principal__cadastro-postagem {
+    background-color: var(--branco-puro);
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.principal__cadastro-postagem--titulo,
+.principal__cadastro-postagem--subtitulo,
+.principal__cadastro-postagem--imagem-idioma,
+.principal__cadastro-postagem--legenda,
+.principal__cadastro-postagem--texto {
+    margin-bottom: 15px;
+}
+
+textarea {
+    border: 1px solid var(--cinza-claro-borda);
+    padding-left: 8px;
+}
+
+.principal__cadastro-postagem--titulo textarea {
+    font-size: 2rem;
+    font-weight: 700;
+    height: 3.5rem;
+    resize: none;
+    width: 100%;
+}
+
+.principal__cadastro-postagem--subtitulo textarea {
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    height: 2rem;
+    resize: none;
+    width: 100%;
+}
+
+.principal__cadastro-postagem--imagem-idioma {
+    display: flex;
+    justify-content: space-between;
+}
+
+.principal__cadastro-postagem--imagem-idioma div:first-child {
+    align-items: center;
+    display: flex;
+}
+
+.principal__cadastro-postagem--imagem-idioma label {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.principal__cadastro-postagem--imagem-idioma select {
+    background-color: var(--cinza-claro-fundo);
+    border: 1px solid var(--cinza-claro-borda);
+    border-radius: 5px;
+    padding-left: 7px;
+    padding-right: 15px;
+}
+
+.principal__cadastro-postagem--legenda textarea {
+    font-size: 1rem;
+    font-weight: 200;
+    height: 2rem;
+    resize: none;
+    width: 100%;
+}
+
+.principal__cadastro-postagem--texto textarea {
+    height: 70vh;
+    resize: none;
+    width: 100%;
+}
