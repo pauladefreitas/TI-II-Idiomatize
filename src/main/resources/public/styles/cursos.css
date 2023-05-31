@@ -1,0 +1,175 @@
+:root {
+    /* -- Cores -- */
+    --azul-marca: #6FD3E7;
+    --azul-link: #46A6C9;
+    --azul-rodape: #141C24;
+    --branco-puro: #FFFFFF;
+    --cinza-azulado: #CBD3D9;
+    --cinza-claro-fundo: #FAFAFA;
+    --cinza-claro-borda: #DBDBDB;
+    --fonte-cor: #3C4F5E;
+    --laranja-marca: #F16723;
+    --vermelho-erro: #BB2525;
+
+    /* -- Fontes -- */
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+.principal-cursos__banner {
+    background-color: var(--azul-marca);
+    padding: 40px 0;
+}
+
+.principal-cursos__banner--mascote img {
+    padding: 0 30px;
+    width: 100%;
+
+    -webkit-filter: drop-shadow(2px 2px var(--azul-link));
+    filter: drop-shadow(2px 2px var(--azul-link));
+}
+
+.principal-cursos__banner--texto {
+    color: var(--branco-puro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 2px 2px var(--azul-link);
+}
+
+.principal-cursos__banner--texto h1 {
+    margin-bottom: 30px;
+}
+
+.principal-cursos__filtros {
+    background-color: var(--cinza-claro-fundo);
+    border-bottom: 1px solid var(--cinza-claro-borda);
+}
+
+.principal-cursos__filtros--filtros {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.principal-cursos__filtros--filtros p {
+    color: var(--cinza-azulado);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.principal-cursos__filtros--filtros label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.principal-cursos__filtros--filtros select {
+    background-color: white;
+    border: 1px solid var(--cinza-claro-borda);
+    border-radius: 20px;
+    color: var(--cinza-marcado);
+    padding-left: 10px;
+    padding-right: 60px;
+}
+
+.principal-cursos__filtros--filtros option {
+    color: var(--fonte-cor);
+}
+
+#staticBackdrop .modal-header,
+#staticBackdrop .modal-footer {
+	justify-content: center;
+}
+
+.principal-cursos__cursos {
+    margin: 30px 0;
+}
+
+.principal-cursos__cursos-item {
+    background-color: var(--cinza-claro-fundo);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 30px;
+}
+
+.principal-cursos__cursos-item:hover {
+    scale: 1.025;
+}
+
+.principal-cursos__cursos-item a {
+    text-decoration: none;
+    color: var(--fonte-cor);
+}
+
+.principal-cursos__cursos-item--imagem img {
+    height: 200px;
+    object-fit: none;
+    width: 100%;
+}
+
+.principal-cursos__cursos-item--corpo {
+    padding: 15px;
+}
+
+.principal-cursos__cursos-item--corpo p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.principal-cursos__cursos-item--corpo img {
+    height: 1rem;
+    margin-right: 5px;
+}
+
+.principal-cursos__cursos-item--corpo h6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.principal-cursos__cursos-item--corpo h6:hover {
+    color: var(--azul-link);
+}
+
+.principal-cursos__cursos-item--rodape {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 15px 15px;
+}
+
+.principal-cursos__cursos-item--rodape p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.principal-cursos__cursos-item--rodape-modulos,
+.principal-cursos__cursos-item--rodape-duracao {
+    align-items: center;
+    display: flex;
+}
+
+.principal-cursos__cursos-item--rodape-modulos i,
+.principal-cursos__cursos-item--rodape-duracao i {
+    color: var(--azul-link);
+    margin-right: 10px;
+}
+
+.principal__cursos--erro {
+	margin-top: 80px;
+}
+
+.principal__cursos--erro img {
+	height: 280px;
+	margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.principal__cursos--erro p {
+	font-weight: 600;
+	margin-bottom: 20px;
+    opacity: 0.5;
+}

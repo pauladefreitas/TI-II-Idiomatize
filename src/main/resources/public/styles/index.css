@@ -1,0 +1,181 @@
+:root {
+    /* -- Cores -- */
+    --azul-marca: #6FD3E7;
+    --azul-link: #46A6C9;
+    --azul-rodape: #141C24;
+    --branco-puro: #FFFFFF;
+    --laranja-marca: #F16723;
+
+    /* -- Fontes -- */
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+/* ========== BANNER ========== */
+
+.principal__banner {
+    display: flex;
+    align-items: center;
+    background-color: var(--azul-marca);
+    background-image: url(../imgs/inicio/mapa-mundi.png);
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 80vh;
+}
+
+.principal__banner .container p {
+    color: var(--branco-puro);
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 0;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.575);
+}
+
+.principal__banner .container p:nth-child(2) {
+    font-weight: 800;
+}
+
+
+/* ========== SOBRE ========== */
+
+.principal h1 {
+    font-weight: 600;
+    text-align: center;
+}
+
+.principal__sobre,
+.principal__motivos,
+.principal__mascote {
+    padding: 30px 0;
+}
+
+.principal__sobre h1::after,
+.principal__mascote h1::after {
+    content: " ";
+    display: block;
+    background-image: url(../imgs/underline-azul.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 20px;
+}
+
+.principal__sobre--logo {
+    text-align: center;
+}
+
+.principal__sobre--logo img {
+    margin: 25px 0;
+    width: 70%;
+}
+
+.principal__sobre--descricao {
+    align-items: center;
+    display: flex;
+    text-align: justify;
+    padding: 20px 10px;
+}
+
+/* ========== MOTIVOS ========== */
+
+.principal__motivos {
+    background-color: var(--azul-marca);
+}
+
+.principal__motivos h1::after,
+.principal__opinioes h1::after {
+    content: " ";
+    display: block;
+    background-image: url(../imgs/underline-branco.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 20px;
+}
+
+.principal__motivos--card {
+    background-color: var(--azul-marca);
+    color: var(--branco-puro);
+    margin-top: 20px;
+}
+
+.principal__motivos--card img {
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+}
+
+.principal__motivos--card img:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.principal__motivos--card-titulo {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.principal__motivos--card-descricao {
+    margin-top: 15px;
+    padding: 0 10px;
+    text-align: justify;
+}
+
+/* ========== MASCOTE ========== */
+
+.principal__mascote--foto-mascote {
+    text-align: center;
+}
+
+.principal__mascote--foto-mascote img {
+    margin: 25px 0;
+    width: 90%;
+}
+
+.principal__mascote--descricao-mascote {
+    align-items: center;
+    display: flex;
+    text-align: justify;
+}
+
+/* ========== OPINIÕES ========== */
+
+.principal__opinioes {
+    background-color: var(--azul-rodape);
+    color: var(--branco-puro);
+    padding-top: 30px;
+}
+
+.principal__opinioes-card {
+    padding: 40px;
+    text-align: center;
+}
+
+.principal__opinioes-card img {
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+}
+
+.principal__opinioes-carrossel {
+    display: flex;
+}
+
+.principal__opinioes-carrossel img {
+    height: 200px;
+    width: 200px;
+}
+
+.principal__opinioes-card--descricao p:first-child {
+    font-weight: 300;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.principal__opinioes-card--descricao p:last-child {
+    font-weight: 700;
+}
+
+.carousel-indicators button {
+    border-radius: 50%;
+    height: 12px !important;
+    margin: 0 10px !important;
+    width: 12px !important;
+}
