@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idiomatize</title>
+    
+    <!-- LINKS do Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:6789/imgs/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:6789/imgs/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:6789/imgs/favicon/favicon-16x16.png">
+
+    <!-- CSS do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- JS do Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/48d815f5b3.js" crossorigin="anonymous"></script>
+
+    <!-- SCRIPT do jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <!-- LINKS da fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS comum à todas as páginas -->
+    <link rel="stylesheet" href="http://localhost:6789/styles/style.css">
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="http://localhost:6789/styles/login.css">
+</head>
+
+<body>
+    <header class="cabecalho sticky-top" style="box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.486);">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html"><img src="imgs/logo.png" alt="Logo do Idiomatize"
+                            class="cabecalho__logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                        <div class="navbar-nav cabecalho__links-usuario">
+                            <div id="nomeUsuario">
+                                <a class="nav-link cabecalho__links-usuario--profile" href="perfil.html"><i
+                                        class="fa-solid fa-user"></i>Perfil</a>
+                            </div>
+
+                            <div id="botaoLogin">
+                                <a class="nav-link cabecalho__links-usuario--login" href="#"><i
+                                        class="fa-solid fa-arrow-right-to-bracket"></i>Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="principal">
+        <div class="container principal__login">
+            <div class="row justify-content-center align-items-center" style="height: 70vh;">
+                <div class="col-11 col-sm-4 principal__login-caixa">
+                    <form id="login-form" class="form" method="post" action="/usuario/login">
+                        <div class="text-center">
+                            <i class="fa-solid fa-lock fa-xl"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Usuário:</label><br>
+                            <input type="text" name="username" id="username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Senha:</label><br>
+                            <div>
+                            	<input type="password" name="password" id="password" class="form-control">
+                            	<i class="fa-solid fa-eye fa-lg" onclick="mostrarSenha()"></i>
+                            </div>
+                        </div>
+                        <div class="form-group text-center" id="botaoEntrar">
+                            <button type="submit" id="btn_salvar" class="btn btn-primary" disabled="disabled">Entrar</button>
+                        </div>
+                    </form>
+
+                    <p class="text-center">Não tem conta? <a href="http://localhost:6789/cadastro-usuario.html">Cadastre-se</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="janela-chatbot" id="janelaChatbot">
+        <div class="janela-chatbot__topo">
+            <div class="janela-chatbot__topo--mascote">
+                <img src="https://live.staticflickr.com/65535/52864929548_2ccfcc0aba_m.jpg" alt="Mascote do site">
+                <p>Olá! Eu sou o João!</p>
+            </div>
+            <div class="janela-chatbot__topo--fechar">
+                <button type="button" onclick="fechaPopupChatbot()"><i class="fa-solid fa-xmark fa-lg"></i></button>
+            </div>
+        </div>
+        <div class="janela-chatbot__conversa" id="chat-log">
+            <div class="janela-chatbot__conversa--janela-mascote">
+                <div class="janela-chatbot__conversa--mascote">
+                    Para conversar comigo, basta criar uma conta e fazer login na nossa plataforma!
+                    <div class="janela-chatbot__conversa--hora-mascote text-end" id="horarioMensagem">
+                    </div>
+                </div>
+                <div class="janela-chatbot__conversa--triangulo-mascote"></div>
+            </div>
+        </div>
+
+        <div class="janela-chatbot__input">
+            <div>
+                <input type="textarea" placeholder="Faça login para poder conversar!" id="user-input" disabled>
+            </div>
+            <div>
+                <button id="send-button" disabled><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbot" id="chatbot" onclick="abrePopupChatbot()" style="cursor: pointer;">
+        <!-- INSERÇÃO DO CHATBOT -->
+    </div>
+
+    <span class="principal__onda-topo--azul-escuro"></span>
+    <footer class="rodape">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 rodape__copyright text-truncate">
+                    <p>&#169; Copyright 2023 - Disciplina de Trabalho Interdisciplinar II: Bancos de Dados e Sistemas
+                        Inteligentes - <span style="font-weight: 600;">ICEI PUC Minas</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+
+    <script src="http://localhost:6789/scripts/main.js"></script>
+    <!-- SCRIPT para validar o login -->
+    <script src="http://localhost:6789/scripts/login.js"></script>
+
+    <script>
+        // Funções para esconder a navbar em usuário não logado
+        document.body.onload = () => {
+            let perfil = document.getElementById('nomeUsuario');
+            let logon = document.getElementById('botaoLogin');
+
+            if (!usuarioCorrente.login) {
+                perfil.style.display = "none";
+                logon.innerHTML = `<a class="nav-link links-usuario--login" href="login.html"><i
+                                                class="fa-solid fa-arrow-right-to-bracket"></i>Login</a>`;
+            }
+            
+         	// Pegar o horário atual
+            var dataAtual = new Date();
+		    if (dataAtual.getMinutes() < 10) {
+		        var horario = dataAtual.getHours() + ":0" + dataAtual.getMinutes();
+		    } else {
+		        var horario = dataAtual.getHours() + ":" + dataAtual.getMinutes();
+		    }
+		    
+		    document.getElementById('horarioMensagem').innerText = horario;
+        }
+        
+        // Função para exibir a senha no input
+        function mostrarSenha() {
+		  var inputSenha = document.getElementById("password");
+		  if (inputSenha.type === "password") {
+			inputSenha.type = "text";
+		  } else {
+			inputSenha.type = "password";
+		  }
+		}
+
+        // Declara uma função para processar o formulário de login
+        async function processaFormLogin(event) {
+            // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+            event.preventDefault();
+
+            // Obtem os dados de login e senha a partir do formulário de login
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Valida login e se estiver ok, redireciona para tela inicial da aplicação
+            resultadoLogin = await loginUser(username, password);
+            
+            if (resultadoLogin) {
+                window.location.href = 'http://localhost:6789/postagem/feed/';
+            }
+            else { // Se login falhou, avisa ao usuário
+                alert('Usuário ou senha incorretos!');
+            }
+        }
+
+        // Associa a função processaFormLogin ao formulário adicionando um manipulador do evento submit
+        document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+        
+     // Função para não permitir que o formulário seja enviado em branco
+        (function () {
+            $('form input').on("keyup change", function () {
+
+                var empty = false;
+                $('form input').each(function () {
+                    if ($(this).val() == '') {
+                        empty = true;
+                    }
+                });
+
+                if (empty) {
+                    $('#btn_salvar').attr('disabled', 'disabled');
+                } else {
+                    $('#btn_salvar').removeAttr('disabled');
+                }
+            });
+        })()
+    </script>
+</body>
+
+</html>

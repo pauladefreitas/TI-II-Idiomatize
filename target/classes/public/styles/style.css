@@ -1,0 +1,422 @@
+:root {
+    /* -- Cores -- */
+    --azul-marca: #6FD3E7;
+    --azul-link: #46A6C9;
+    --azul-rodape: #141C24;
+    --branco-puro: #FFFFFF;
+    --cinza-azulado: #CBD3D9;
+    --cinza-claro-fundo: #FAFAFA;
+    --cinza-claro-borda: #DBDBDB;
+    --fonte-cor: #3C4F5E;
+    --laranja-marca: #F16723;
+    --vermelho-erro: #BB2525;
+
+    /* -- Fontes -- */
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* O style.css estiliza os elementos que se repetem em todas as páginas, como header e footer */
+
+/* ========== CABEÇALHO ========== */
+
+.cabecalho {
+    background-color: var(--azul-marca);
+}
+
+.navbar {
+    background-color: var(--azul-marca);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 2px 0;
+}
+
+a.navbar-brand {
+    display: flex !important;
+    align-items: center;
+    padding: 0;
+    margin-right: 0;
+}
+
+.navbar-toggler {
+    border: none;
+    padding-right: 0;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    align-items: center;
+    background-image: none;
+    display: flex;
+    justify-content: end;
+}
+
+.navbar-toggler-icon i {
+    color: var(--cinza-claro-fundo);
+}
+
+.cabecalho__logo {
+    max-height: 60px;
+    padding: 5px 0;
+}
+
+.cabecalho__links-principais {
+    margin-right: 30px;
+}
+
+.cabecalho__links-principais a {
+    color: var(--branco-puro);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho__links-usuario {
+    display: flex;
+    justify-content: end;
+
+}
+
+.cabecalho__links-usuario a {
+    color: var(--branco-puro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+}
+
+.cabecalho__links-usuario img {
+    border-radius: 50%;
+    height: 30px;
+    margin-right: 5px;
+    width: 30px;
+}
+
+.cabecalho__links-principais a:hover,
+.cabecalho__links-principais a:focus,
+.cabecalho__links-usuario a:hover,
+.cabecalho__links-usuario a:focus {
+    color: var(--azul-link);
+}
+
+.cabecalho__links-usuario--cursos,
+.cabecalho__links-usuario--profile {
+    margin-right: 10px;
+}
+
+.cabecalho__links-usuario .fa-user,
+.cabecalho__links-usuario .fa-arrow-right-to-bracket,
+.cabecalho__links-usuario .fa-lock {
+    margin-right: 10px;
+}
+
+
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+
+
+/* ========== CORPO ========== */
+
+main {
+    color: var(--fonte-cor);
+    font-family: var(--fonte-principal);
+    min-height: calc(100% - 64px - 129px);
+}
+
+.principal__onda-base--azul-principal {
+    content: " ";
+    display: block;
+    background-image: url(/imgs/onda-bottom-bg.png);
+    background-position: 50%;
+    background-repeat: repeat-x;
+    width: 100vw;
+    height: 60px;
+}
+
+.principal__onda-topo--azul-principal {
+    content: " ";
+    display: block;
+    background-image: url(/imgs/onda-top-bg.png);
+    background-position: 0;
+    background-repeat: repeat-x;
+    width: 100vw;
+    height: 60px;
+}
+
+.principal__onda-topo--azul-escuro {
+    content: " ";
+    display: block;
+    background-image: url(/imgs/onda-top-dark-bg.png);
+    background-position: 50%;
+    background-repeat: repeat-x;
+    width: 100vw;
+    height: 60px;
+}
+
+
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+
+
+/* ========== RODAPÉ ========== */
+
+.rodape {
+    background-color: var(--azul-rodape);
+    color: var(--branco-puro);
+    font-family: var(--fonte-principal);
+}
+
+.rodape__copyright {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////// */
+
+
+/* ========== CHATBOT ========== */
+
+.chatbot {
+    bottom: 20px;
+    position: fixed;
+    right: 37px;
+}
+
+.chatbot img {
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    width: 65px;
+}
+
+.chatbot img:hover {
+    scale: 1.025;
+}
+
+.janela-chatbot {
+    border-radius: 15px;
+    bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: none;
+    font-family: var(--fonte-principal);
+    height: 500px;
+    position: fixed;
+    right: 37px;
+    width: 350px;
+    z-index: 1;
+}
+
+.janela-chatbot__topo {
+    align-items: center;
+    background-color: var(--azul-marca);
+    border-bottom: 1px solid var(--azul-link);
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    height: 14%;
+    padding: 10px;
+    position: relative;
+}
+
+.janela-chatbot__topo--mascote {
+    align-items: center;
+    display: flex;
+}
+
+.janela-chatbot__topo--mascote img {
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 14%;
+}
+
+.janela-chatbot__topo--mascote p {
+    color: var(--branco-puro);
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-left: 10px;
+    text-shadow: 1px 1px 2px var(--fonte-cor);
+}
+
+.janela-chatbot__topo--fechar button {
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.janela-chatbot__topo--fechar button:hover {
+    color: var(--branco-puro);
+}
+
+.janela-chatbot__conversa {
+    background-color: var(--cinza-claro-fundo);
+    height: 74%;
+    font-size: 14px;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.janela-chatbot__conversa--janela-usuario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+.janela-chatbot__conversa--usuario {
+    background-color: var(--azul-marca);
+    border-radius: 8px;
+    color: var(--fonte-cor);
+    padding: 10px;
+}
+
+.janela-chatbot__conversa--hora-usuario {
+    font-size: 11px;
+}
+
+.janela-chatbot__conversa--triangulo-usuario {
+    align-self: self-end;
+    border-left: 10px solid transparent;
+    border-top: 10px solid var(--azul-marca);
+    height: 0;
+    margin-right: 12px;
+    width: 0;
+}
+
+.janela-chatbot__conversa--janela-mascote {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-right: 30px;
+}
+
+.janela-chatbot__conversa--mascote {
+    background-color: var(--azul-link);
+    border-radius: 8px;
+    color: var(--branco-puro);
+    padding: 10px;
+}
+
+.janela-chatbot__conversa--hora-mascote {
+    font-size: 11px;
+}
+
+.janela-chatbot__conversa--triangulo-mascote {
+    align-self: self-start;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--azul-link);
+    height: 0;
+    margin-left: 12px;
+    width: 0;
+}
+
+.janela-chatbot__input {
+    align-items: center;
+    background-color: var(--azul-marca);
+    border-top: 1px solid var(--azul-link);
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    height: 12%;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.janela-chatbot__input input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--azul-link);
+    border-radius: 30px;
+    color: var(--fonte-cor);
+    font-size: 14px;
+    padding: 3px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.janela-chatbot__input button {
+    background-color: transparent;
+    border: none;
+    color: var(--azul-link);
+}
+
+.janela-chatbot__input button:hover {
+    color: var(--branco-puro);
+}
+
+.nova-postagem {
+    background-color: var(--cinza-claro-fundo);
+    border-radius: 50%;
+    bottom: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    color: var(--branco-puro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    left: 20px;
+    position: fixed;
+    width: 65px;
+}
+
+.nova-postagem i {
+    text-decoration: none;
+    color: var(--azul-rodape);
+}
+
+.nova-postagem:hover {
+    scale: 1.025;
+}
+
+@media only screen and (max-width: 800px) {
+    .chatbot {
+        bottom: 20px;
+        position: fixed;
+        right: 20px;
+    }
+
+    .janela-chatbot {
+        background-color: var(--azul-marca);
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 10000;
+    }
+
+    .janela-chatbot__topo {
+        height: 12%;
+    }
+
+    .janela-chatbot__conversa {
+        height: 80%;
+    }
+
+    .janela-chatbot__input {
+        height: 8%;
+    }
+
+    .janela-chatbot__input input {
+        width: 82vw;
+    }
+}

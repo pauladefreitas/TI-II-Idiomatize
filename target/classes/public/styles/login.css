@@ -1,0 +1,55 @@
+:root {
+    /* -- Cores -- */
+    --azul-marca: #6FD3E7;
+    --azul-link: #46A6C9;
+    --azul-rodape: #141C24;
+    --branco-puro: #FFFFFF;
+    --cinza-claro-fundo: #FAFAFA;
+    --cinza-claro-borda: #DBDBDB;
+    --laranja-marca: #F16723;
+
+    /* -- Fontes -- */
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #56beba;
+    background-image: url(../imgs/inicio/mapa-mundi.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.principal__login-caixa {
+    background-color: var(--cinza-claro-fundo);
+    border: 1px solid var(--cinza-claro-borda);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.principal__login-caixa i {
+    color: #DBDBDB;
+}
+
+.principal__login-caixa p {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-top: 15px;
+}
+
+.form-group>div {
+	align-items: center;
+	display: flex;
+	position: relative;
+}
+
+.form-group .fa-eye {
+	position: absolute;
+	right: 10px;
+}
+
+.form-group .fa-eye:hover {
+	cursor: pointer;
+}

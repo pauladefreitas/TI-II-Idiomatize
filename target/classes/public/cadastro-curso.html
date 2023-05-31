@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idiomatize</title>
+    
+    <!-- LINKS do Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:6789/imgs/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:6789/imgs/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:6789/imgs/favicon/favicon-16x16.png">
+
+    <!-- CSS do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- JS do Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/48d815f5b3.js" crossorigin="anonymous"></script>
+
+    <!-- SCRIPT do jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <!-- LINKS da fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS comum à todas as páginas -->
+    <link rel="stylesheet" href="http://localhost:6789/styles/style.css">
+    <!-- CSS específico da página -->
+    <link rel="stylesheet" href="http://localhost:6789/styles/cadastro-curso.css">
+</head>
+
+<body>
+    <header class="cabecalho sticky-top" style="box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.486);">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="http://localhost:6789/postagem/feed/"><img src="http://localhost:6789/imgs/logo.png" alt="Logo do Idiomatize"
+                            class="cabecalho__logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                        <div class="navbar-nav cabecalho__links-usuario">
+                            <div id="cursosPlataforma">
+                                <a class="nav-link cabecalho__links-usuario--cursos" href="http://localhost:6789/curso/feed/"><i
+                                        class="fa-solid fa-lock"></i>Cursos</a>
+                            </div>
+
+                            <div id="nomeUsuario">
+                                <a class="nav-link cabecalho__links-usuario--profile" href="perfil.html"><i
+                                        class="fa-solid fa-user"></i>Perfil</a>
+                            </div>
+
+                            <div id="botaoLogin">
+                                <a class="nav-link cabecalho__links-usuario--login" href="#"><i
+                                        class="fa-solid fa-arrow-right-to-bracket"></i>Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="principal">
+        <div class="container">
+            <div class="row principal__cadastro-quiz-banner">
+                <div class="col-3 principal__cadastro-quiz-banner--imagem text-center">
+                    <img src="http://localhost:6789/imgs/curso/mascote-cursos.png" alt="Mascote do site">
+                </div>
+
+                <div class="col-9 principal__cadastro-quiz-banner--texto">
+                    <h1>Cadastre seu curso!</h1>
+                    <p>Defina os enunciados das questões e as opções de resposta. Fique à vontade para escolher qualquer tema!</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 cadastro-quiz">
+                    <form action="/curso/insert" method="post">
+                        <div class="cadastro-quiz__informacoes" id="quiz-informacoes">
+                            <div class="cadastro-quiz__informacoes--nome">
+                                <label for="informacoes--nome">Nome do Curso:</label><br>
+                                <input type="text" name="informacoes--nome" id="informacoes--nome" maxlength="60">
+                            </div>
+
+                            <div class="cadastro-quiz__informacoes--descricao">
+                                <label for="informacoes--descricao">Descrição do Curso:</label><br>
+                                <textarea name="informacoes--descricao" id="informacoes--descricao" maxlength="300"></textarea>
+                            </div>
+
+                            <div class="cadastro-quiz__informacoes--ilustracao">
+                                <label for="informacoes--ilustracao">Imagem para ilustrar o curso:</label><br>
+                                <input type="file" name="informacoes--ilustracao" id="informacoes--ilustracao">
+                            </div>
+
+                            <div class="cadastro-quiz__informacoes--estatisticas">
+                                <div>
+                                    <label for="informacoes--idioma">Idioma do Curso:</label>
+
+                                    <select id="informacoes--idioma" name="informacoes--idioma">
+                                        <option disabled selected value>Idioma</option>
+                                        <option value="portugues">🇧🇷 Português</option>
+                                        <option value="ingles">🇺🇸 Inglês</option>
+                                        <option value="espanhol">🇪🇸 Espanhol</option>
+                                        <option value="frances">🇫🇷 Francês</option>
+                                        <option value="alemao">🇩🇪 Alemão</option>
+                                        <option value="mandarim">🇨🇳 Mandarim</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <div>
+                                        <label for="informacoes--duracao">Duração do Curso:</label><br>
+                                        <input type="number" name="informacoes--duracao-horas" id="informacoes--duracao-horas" min="0" max="3"> horas
+                                        <input type="number" name="informacoes--duracao-minutos" id="informacoes--duracao-minutos" min="0" max="59"> minutos
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cadastro-quiz__informacoes--salvar text-end">
+                                <input type="button" value="Salvar Informações" class="btn btn-info informacoes--salvar" id="btn_salvar-informacoes" onclick="congelaInformacoes()" disabled="disabled">
+                            </div>
+                        </div>
+
+
+                        <div class="cadastro-quiz__questao-um" id="quiz-questao-um">
+                            <h4>Questão 1</h4>
+
+                            <div class="cadastro-quiz__questao-um--enunciado">
+                                <label for="questao-um--enunciado">Escreva o enunciado da primeira questão:</label><br>
+                                <textarea name="questao-um--enunciado" id="questao-um--enunciado" maxlength="300"></textarea>
+                            </div>
+
+                            <div class="cadastro-quiz__questao-um--opcoes">
+                                <label for="questao-um--opcaoA">Opção A:</label><br>
+                                <input type="text" name="questao-um--opcaoA" id="questao-um--opcaoA" maxlength="100">
+                                <br>
+                                <label for="questao-um--opcaoB">Opção B:</label><br>
+                                <input type="text" name="questao-um--opcaoB" id="questao-um--opcaoB" maxlength="100">
+                                <br>
+                                <label for="questao-um--opcaoC">Opção C:</label><br>
+                                <input type="text" name="questao-um--opcaoC" id="questao-um--opcaoC" maxlength="100">
+                                <br>
+                                <label for="questao-um--opcaoD">Opção D:</label><br>
+                                <input type="text" name="questao-um--opcaoD" id="questao-um--opcaoD" maxlength="100">
+                            </div>
+
+                            <div class="cadastro-quiz__questao-um--resposta">
+                                <label for="questao-um--resposta">Selecione qual é a resposta correta:</label>
+
+                                <select id="questao-um--resposta">
+                                    <option value="q1r1">Opção A</option>
+                                    <option value="q1r2">Opção B</option>
+                                    <option value="q1r3">Opção C</option>
+                                    <option value="q1r4">Opção D</option>
+                                </select>
+                            </div>
+
+                            <div class="cadastro-quiz__questao-um--salvar text-end">
+                                <input type="button" value="Salvar Questão" class="btn btn-info questao-um--salvar" id="btn_salvar-questao-um" onclick="congelaQuestoes('um')" disabled="disabled">
+                            </div>
+                        </div>
+
+                        <div class="cadastro-quiz__questao-dois" id="quiz-questao-dois">
+                            <h4>Questão 2</h4>
+
+                            <div class="cadastro-quiz__questao-dois--enunciado">
+                                <label for="questao-dois--enunciado">Escreva o enunciado da primeira questão:</label><br>
+                                <textarea name="questao-dois--enunciado" id="questao-dois--enunciado" maxlength="300"></textarea>
+                            </div>
+
+                            <div class="cadastro-quiz__questao-dois--opcoes">
+                                <label for="questao-dois--opcaoA">Opção A:</label><br>
+                                <input type="text" name="questao-dois--opcaoA" id="questao-dois--opcaoA" maxlength="100">
+                                <br>
+                                <label for="questao-dois--opcaoB">Opção B:</label><br>
+                                <input type="text" name="questao-dois--opcaoB" id="questao-dois--opcaoB" maxlength="100">
+                                <br>
+                                <label for="questao-dois--opcaoC">Opção C:</label><br>
+                                <input type="text" name="questao-dois--opcaoC" id="questao-dois--opcaoC" maxlength="100">
+                                <br>
+                                <label for="questao-dois--opcaoD">Opção D:</label><br>
+                                <input type="text" name="questao-dois--opcaoD" id="questao-dois--opcaoD" maxlength="100">
+                            </div>
+
+                            <div class="cadastro-quiz__questao-dois--resposta">
+                                <label for="questao-dois--resposta">Selecione qual é a resposta correta:</label>
+
+                                <select id="questao-dois--resposta">
+                                    <option value="q1r1">Opção A</option>
+                                    <option value="q1r2">Opção B</option>
+                                    <option value="q1r3">Opção C</option>
+                                    <option value="q1r4">Opção D</option>
+                                </select>
+                            </div>
+
+                            <div class="cadastro-quiz__questao-dois--salvar text-end">
+                                <input type="button" value="Salvar Questão" class="btn btn-info questao-dois--salvar" id="btn_salvar-questao-dois" onclick="congelaQuestoes('dois')" disabled="disabled">
+                            </div>
+                        </div>
+
+                        <div class="cadastro-quiz__questao-tres" id="quiz-questao-tres">
+                            <h4>Questão 3</h4>
+
+                            <div class="cadastro-quiz__questao-tres--enunciado">
+                                <label for="questao-tres--enunciado">Escreva o enunciado da primeira questão:</label><br>
+                                <textarea name="questao-tres--enunciado" id="questao-tres--enunciado" maxlength="300"></textarea>
+                            </div>
+
+                            <div class="cadastro-quiz__questao-tres--opcoes">
+                                <label for="questao-tres--opcaoA">Opção A:</label><br>
+                                <input type="text" name="questao-tres--opcaoA" id="questao-tres--opcaoA" maxlength="100">
+                                <br>
+                                <label for="questao-tres--opcaoB">Opção B:</label><br>
+                                <input type="text" name="questao-tres--opcaoB" id="questao-tres--opcaoB" maxlength="100">
+                                <br>
+                                <label for="questao-tres--opcaoC">Opção C:</label><br>
+                                <input type="text" name="questao-tres--opcaoC" id="questao-tres--opcaoC" maxlength="100">
+                                <br>
+                                <label for="questao-tres--opcaoD">Opção D:</label><br>
+                                <input type="text" name="questao-tres--opcaoD" id="questao-tres--opcaoD" maxlength="100">
+                            </div>
+
+                            <div class="cadastro-quiz__questao-tres--resposta">
+                                <label for="questao-tres--resposta">Selecione qual é a resposta correta:</label>
+
+                                <select id="questao-tres--resposta">
+                                    <option value="q1r1">Opção A</option>
+                                    <option value="q1r2">Opção B</option>
+                                    <option value="q1r3">Opção C</option>
+                                    <option value="q1r4">Opção D</option>
+                                </select>
+                            </div>
+
+                            <div class="cadastro-quiz__questao-tres--salvar text-end">
+                                <input type="button" value="Salvar Questão" class="btn btn-info questao-tres--salvar" id="btn_salvar-questao-tres" onclick="congelaQuestoes('tres')" disabled="disabled">
+                            </div>
+                        </div>
+
+                        <input type="text" id="quiz--texto" name="quiz--texto" hidden>
+
+                        <input type="text" name="autor-curso" id="autor-curso" hidden>
+
+                        <!-- BOTÃO PARA SALVAR O QUIZ COMPLETO -->
+                        <div class="cadastro-quiz__salvar--completo text-center">
+                            <input type="submit" value="Salvar Quiz" class="btn btn-primary" id="btn_salvar-quiz" disabled="disabled">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <span class="principal__onda-topo--azul-escuro"></span>
+    <footer class="rodape">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 rodape__copyright text-truncate">
+                    <p>&#169; Copyright 2023 - Disciplina de Trabalho Interdisciplinar II: Bancos de Dados e Sistemas
+                        Inteligentes - <span style="font-weight: 600;">ICEI PUC Minas</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SEÇÃO DE POST E CHATBOT ===== -->
+
+    <div class="janela-chatbot" id="janelaChatbot">
+        <div class="janela-chatbot__topo">
+            <div class="janela-chatbot__topo--mascote">
+                <img src="https://live.staticflickr.com/65535/52864929548_2ccfcc0aba_m.jpg" alt="Mascote do site">
+                <p>Olá! Eu sou o João!</p>
+            </div>
+            <div class="janela-chatbot__topo--fechar">
+                <button type="button" onclick="fechaPopupChatbot()"><i class="fa-solid fa-xmark fa-lg"></i></button>
+            </div>
+        </div>
+        <div class="janela-chatbot__conversa" id="chat-log">
+            <!-- CONVERSA COM O CHATBOT -->
+        </div>
+
+        <div class="janela-chatbot__input">
+            <div>
+                <input type="textarea" placeholder="Converse com o João!" id="user-input">
+            </div>
+            <div>
+                <button id="send-button"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbot" id="chatbot" onclick="abrePopupChatbot()" style="cursor: pointer;">
+        <!-- INSERÇÃO DO CHATBOT -->
+    </div>
+
+    <!-- ===== SEÇÃO DE POST E CHATBOT ===== -->
+
+    <!-- JS do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+
+    <script src="http://localhost:6789/scripts/main.js"></script>
+    <!-- SCRIPT para validar o login -->
+    <script src="http://localhost:6789/scripts/login.js"></script>
+    <!-- SCRIPT para conectar com o chatbot -->
+    <script src="http://localhost:6789/scripts/chatbot.js"></script>
+
+    <script>
+        // Funções para esconder a navbar em usuário não logado
+        document.body.onload = () => {
+            if (!usuarioCorrente.login) {
+                window.location.href = 'http://localhost:6789/index.html';
+            }
+            
+            document.getElementById("autor-curso").value = usuarioCorrente.id;
+        }
+
+        // Associa ao evento de carga da página a função para verificar se o usuário está logado
+        window.addEventListener('load', initPage);
+        
+     // Função para não permitir que o formulário de informações seja enviado em branco
+        (function () {
+            $('#quiz-informacoes input, #quiz-informacoes textarea, #quiz-informacoes select').on("keyup change", function () {
+
+                var empty = false;
+                $('#quiz-informacoes input, #quiz-informacoes textarea, #quiz-informacoes select').each(function () {
+                    if ($(this).val() == '') {
+                        empty = true;
+                    }
+                });
+
+                if (empty) {
+                    $('#btn_salvar-informacoes').attr('disabled', 'disabled');
+                } else {
+                    $('#btn_salvar-informacoes').removeAttr('disabled');
+                }
+            });
+        })();
+
+        function congelaInformacoes() {
+            $('#quiz-informacoes input, #quiz-informacoes textarea, #quiz-informacoes select').each(function () {
+                $(this).attr('disabled', 'disabled');
+            });
+        }
+
+
+        // Função para não permitir que o formulário da QUESTÃO UM seja enviado em branco
+        (function () {
+            $('#quiz-questao-um input, #quiz-questao-um textarea, #quiz-questao-um select').on("keyup change", function () {
+
+                var empty = false;
+                $('#quiz-questao-um input, #quiz-questao-um textarea, #quiz-questao-um select').each(function () {
+                    if ($(this).val() == '') {
+                        empty = true;
+                    }
+                });
+
+                if (empty) {
+                    $('#btn_salvar-questao-um').attr('disabled', 'disabled');
+                } else {
+                    $('#btn_salvar-questao-um').removeAttr('disabled');
+                }
+            });
+        })();
+
+
+        // Função para não permitir que o formulário da QUESTÃO DOIS seja enviado em branco
+        (function () {
+            $('#quiz-questao-dois input, #quiz-questao-dois textarea, #quiz-questao-dois select').on("keyup change", function () {
+
+                var empty = false;
+                $('#quiz-questao-dois input, #quiz-questao-dois textarea, #quiz-questao-dois select').each(function () {
+                    if ($(this).val() == '') {
+                        empty = true;
+                    }
+                });
+
+                if (empty) {
+                    $('#btn_salvar-questao-dois').attr('disabled', 'disabled');
+                } else {
+                    $('#btn_salvar-questao-dois').removeAttr('disabled');
+                }
+            });
+        })();
+
+
+        // Função para não permitir que o formulário da QUESTÃO TRÊS seja enviado em branco
+        (function () {
+            $('#quiz-questao-tres input, #quiz-questao-tres textarea, #quiz-questao-tres select').on("keyup change", function () {
+
+                var empty = false;
+                $('#quiz-questao-tres input, #quiz-questao-tres textarea, #quiz-questao-tres select').each(function () {
+                    if ($(this).val() == '') {
+                        empty = true;
+                    }
+                });
+
+                if (empty) {
+                    $('#btn_salvar-questao-tres').attr('disabled', 'disabled');
+                } else {
+                    $('#btn_salvar-questao-tres').removeAttr('disabled');
+                }
+            });
+        })();
+
+
+        function congelaQuestoes(numero) {
+            $(`#quiz-questao-${numero} input, #quiz-questao-${numero} textarea, #quiz-questao-${numero} select`).each(function () {
+                $(this).attr('disabled', 'disabled');
+            });
+        }
+
+
+        // Função para não permitir que o formulário COMPLETO seja enviado em branco
+        (function () {
+            $('form input, form textarea, form select').on("keyup change", function () {
+
+                var empty = false;
+                $('form input, form textarea, form select').each(function () {
+                    if ($(this).val() == '') {
+                        empty = true;
+                    }
+                });
+
+                if (empty) {
+                    $('#btn_salvar-quiz').attr('disabled', 'disabled');
+                } else {
+                    $('#btn_salvar-quiz').removeAttr('disabled');
+                }
+
+                // Dados da QUESTÃO UM
+                var questaoUmEnunciado = document.getElementById("questao-um--enunciado").value;
+                var questaoUmOpcaoA = document.getElementById("questao-um--opcaoA").value;
+                var questaoUmOpcaoB = document.getElementById("questao-um--opcaoB").value;
+                var questaoUmOpcaoC = document.getElementById("questao-um--opcaoC").value;
+                var questaoUmOpcaoD = document.getElementById("questao-um--opcaoD").value;
+
+                // Dados da QUESTÃO DOIS
+                var questaoDoisEnunciado = document.getElementById("questao-dois--enunciado").value;
+                var questaoDoisOpcaoA = document.getElementById("questao-dois--opcaoA").value;
+                var questaoDoisOpcaoB = document.getElementById("questao-dois--opcaoB").value;
+                var questaoDoisOpcaoC = document.getElementById("questao-dois--opcaoC").value;
+                var questaoDoisOpcaoD = document.getElementById("questao-dois--opcaoD").value;
+
+                // Dados da QUESTÃO TRÊS
+                var questaoTresEnunciado = document.getElementById("questao-tres--enunciado").value;
+                var questaoTresOpcaoA = document.getElementById("questao-tres--opcaoA").value;
+                var questaoTresOpcaoB = document.getElementById("questao-tres--opcaoB").value;
+                var questaoTresOpcaoC = document.getElementById("questao-tres--opcaoC").value;
+                var questaoTresOpcaoD = document.getElementById("questao-tres--opcaoD").value;
+
+                document.getElementById("quiz--texto").value = `<form action="">
+
+                                                                            <!-- QUESTÃO UM -->
+
+                                                                            <div class="curso-quiz__questao-um">
+                                                                                <h4>Questão 1</h4>
+                                                                                <div class="curso-quiz__questao-um--enunciado text-center">
+                                                                                    <p>${questaoUmEnunciado}</p>
+                                                                                </div>
+                                                                                <div class="curso-quiz__questao-um--opcoes" id="opcoesQ01">
+                                                                                    <div class="curso-quiz__questao-um--op01">
+                                                                                        <input type="radio" id="q01_op01" name="questao_01" value="q1r1"><span>A</span>
+                                                                                        <label for="q01_op01" onclick="mudaCorOpcao(this, 'opcoesQ01')">${questaoUmOpcaoA}</label>
+                                                                                    </div>
+
+                                                                                    <div class="curso-quiz__questao-um--op02">
+                                                                                        <input type="radio" id="q01_op02" name="questao_01" value="q1r2"><span>B</span>
+                                                                                        <label for="q01_op02" onclick="mudaCorOpcao(this, 'opcoesQ01')">${questaoUmOpcaoB}</label><br>
+                                                                                    </div>
+
+                                                                                    <div class="curso-quiz__questao-um--op03">
+                                                                                        <input type="radio" id="q01_op03" name="questao_01" value="q1r3"><span>C</span>
+                                                                                        <label for="q01_op03" onclick="mudaCorOpcao(this, 'opcoesQ01')">${questaoUmOpcaoC}</label><br>
+                                                                                    </div>
+
+                                                                                    <div class="curso-quiz__questao-um--op04">
+                                                                                        <input type="radio" id="q01_op04" name="questao_01" value="q1r4"><span>D</span>
+                                                                                        <label for="q01_op04" onclick="mudaCorOpcao(this, 'opcoesQ01')">${questaoUmOpcaoD}</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                            <!-- QUESTÃO DOIS -->
+
+                                                                            <div class="curso-quiz__questao-dois">
+                                                                                <h4>Questão 2</h4>
+                                                                                <div class="curso-quiz__questao-dois--enunciado text-center">
+                                                                                    <p>${questaoDoisEnunciado}</p>
+                                                                                </div>
+                                                                                <div class="curso-quiz__questao-dois--opcoes" id="opcoesQ02">
+                                                                                    <div class="curso-quiz__questao-dois--op01">
+                                                                                        <input type="radio" id="q02_op01" name="questao_02" value="q2r1"><span>A</span>
+                                                                                        <label for="q02_op01" onclick="mudaCorOpcao(this, 'opcoesQ02')">${questaoDoisOpcaoA}</label>
+                                                                                    </div>
+
+                                                                                    <div class="curso-quiz__questao-dois--op02">
+                                                                                        <input type="radio" id="q02_op02" name="questao_02" value="q2r2"><span>B</span>
+                                                                                        <label for="q02_op02" onclick="mudaCorOpcao(this, 'opcoesQ02')">${questaoDoisOpcaoB}</label><br>
+                                                                                    </div>
+
+                                                                                    <div class="curso-quiz__questao-dois--op03">
+                                                                                        <input type="radio" id="q02_op03" name="questao_02" value="q2r3"><span>C</span>
+                                                                                        <label for="q02_op03" onclick="mudaCorOpcao(this, 'opcoesQ02')">${questaoDoisOpcaoC}</label><br>
+                                                                                    </div>
+
+                                                                                    <div class="curso-quiz__questao-dois--op04">
+                                                                                        <input type="radio" id="q02_op04" name="questao_02" value="q2r4"><span>D</span>
+                                                                                        <label for="q02_op04" onclick="mudaCorOpcao(this, 'opcoesQ02')">${questaoDoisOpcaoD}</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                            <!-- QUESTÃO TRÊS -->
+
+                                                                            <div class="curso-quiz__questao-tres">
+                                                                                <h4>Questão 3</h4>
+                                                                                <div class="curso-quiz__questao-tres--enunciado text-center">
+                                                                                    <p>${questaoTresEnunciado}</p>
+                                                                                </div>
+                                                                                <div class="curso-quiz__questao-tres--opcoes" id="opcoesQ03">
+                                                                                    <div class="curso-quiz__questao-tres--op01">
+                                                                                        <input type="radio" id="q03_op01" name="questao_03" value="q3r1"><span>A</span>
+                                                                                        <label for="q03_op01" onclick="mudaCorOpcao(this, 'opcoesQ03')">${questaoTresOpcaoA}</label>
+                                                                                    </div>
+
+                                                                                    <div class="curso-quiz__questao-tres--op02">
+                                                                                        <input type="radio" id="q03_op02" name="questao_03" value="q3r2"><span>B</span>
+                                                                                        <label for="q03_op02" onclick="mudaCorOpcao(this, 'opcoesQ03')">${questaoTresOpcaoB}</label><br>
+                                                                                    </div>
+
+                                                                                    <div class="curso-quiz__questao-tres--op03">
+                                                                                        <input type="radio" id="q03_op03" name="questao_03" value="q3r3"><span>C</span>
+                                                                                        <label for="q03_op03" onclick="mudaCorOpcao(this, 'opcoesQ03')">${questaoTresOpcaoC}</label><br>
+                                                                                    </div>
+
+                                                                                    <div class="curso-quiz__questao-tres--op04">
+                                                                                        <input type="radio" id="q03_op04" name="questao_03" value="q3r4"><span>D</span>
+                                                                                        <label for="q03_op04" onclick="mudaCorOpcao(this, 'opcoesQ03')">${questaoTresOpcaoD}</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="curso-quiz__enviar text-center">
+                                                                                <input type="submit" value="Enviar" class="btn btn-primary">
+                                                                            </div>
+                                                                        </form>`;
+            });
+        })()
+    </script>
+</body>
+
+</html>

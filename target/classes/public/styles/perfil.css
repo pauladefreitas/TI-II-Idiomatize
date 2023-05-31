@@ -1,0 +1,432 @@
+:root {
+    /* -- Cores -- */
+    --azul-marca: #6FD3E7;
+    --azul-link: #46A6C9;
+    --azul-rodape: #141C24;
+    --branco-puro: #FFFFFF;
+    --cinza-azulado: #CBD3D9;
+    --cinza-claro-fundo: #FAFAFA;
+    --cinza-claro-borda: #DBDBDB;
+    --fonte-cor: #3C4F5E;
+    --laranja-marca: #F16723;
+    --vermelho-erro: #BB2525;
+
+    /* -- Fontes -- */
+    --fonte-principal: 'Poppins', sans-serif;
+}
+
+.principal__informacoes-usuario {
+    border-bottom: 1px solid var(--cinza-claro-borda);
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.principal__informacoes-usuario--foto-perfil img {
+	border-radius: 20px;
+    width: 100%;
+}
+
+.principal__informacoes-usuario--descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.principal__informacoes-usuario--descricao-identidade h1 {
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.principal__informacoes-usuario--descricao-identidade p {
+    color: var(--azul-marca);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.principal__informacoes-usuario--descricao-estatisticas i:not(:first-child) {
+    margin-left: 50px;
+}
+
+.principal__informacoes-usuario--descricao-estatisticas i {
+    color: var(--azul-marca);
+    margin-right: 5px;
+}
+
+.principal__informacoes-usuario--descricao-estatisticas p {
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.principal__informacoes-usuario--descricao-premium button {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.principal__informacoes-usuario--descricao-premium i {
+    margin-right: 5px;
+}
+
+.principal__informacoes-usuario--descricao-fluencia h6 {
+    color: var(--cinza-azulado);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.principal__informacoes-usuario--descricao-fluencia img {
+    height: 18px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.principal__informacoes-usuario--descricao-contato p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.principal__informacoes-usuario--descricao-contato a {
+    color: var(--fonte-cor);
+    text-decoration: none;
+}
+
+.principal__informacoes-usuario--descricao-contato a:hover {
+    color: var(--azul-link);
+}
+
+.principal__informacoes-usuario--descricao-configuracoes {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.principal__informacoes-usuario--descricao-configuracoes button {
+	color: var(--branco-puro);
+}
+
+.principal__informacoes-usuario--descricao-configuracoes li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.principal__informacoes-usuario--descricao-configuracoes a {
+    color: var(--fonte-cor);
+    font-weight: 500;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+.principal__informacoes-usuario--descricao-configuracoes a:hover {
+    color: var(--azul-marca);
+}
+
+.principal__informacoes-usuario--descricao-configuracoes i {
+	margin-right: 5px;
+}
+
+.principal__informacoes-usuario--descricao-configuracoes .dropdown-menu {
+	min-width: 200px;
+}
+
+.dropdown-menu {
+    padding: 15px 0;
+}
+
+#modalDelete .modal-body p {
+    margin-bottom: 0;
+}
+
+#modalUpdate .modal-footer {
+    justify-content: center;
+    margin-top: 25px;
+    padding: 0;
+    padding-top: 15px;
+}
+
+#modalUpdate .form-group {
+    margin-bottom: 10px;
+}
+
+#modalUpdate .form-group-idioma {
+    margin-top: 25px;
+}
+
+#modalUpdate .form-group-idioma label {
+    margin-right: 10px;
+}
+
+#modalUpdate .form-group>div {
+	align-items: center;
+	display: flex;
+	position: relative;
+}
+
+#modalUpdate .form-group .fa-eye {
+	position: absolute;
+	right: 10px;
+}
+
+#modalUpdate .form-group .fa-eye:hover {
+	cursor: pointer;
+}
+
+#modalPremium .form-credit-infos {
+    display: flex;
+}
+
+#modalPremium .form-credit-infos div:not(:last-child) {
+    padding-right: 2rem;
+}
+
+#modalPremium .form-group {
+    margin-bottom: 10px;
+}
+
+#modalPremium .modal-footer {
+    justify-content: center;
+    margin-top: 25px;
+    padding: 0;
+    padding-top: 15px;
+}
+
+
+
+/* ====== POSTAGENS DO USUÁRIO ====== */
+
+.principal__postagens--item {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: var(--cinza-claro-fundo);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.principal__postagens--imagem {
+	height: 160px;
+	overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+.principal__postagens--imagem img:first-child {
+	filter: blur(4px);
+    height: 160px;
+    object-fit: none;
+    opacity: 0.8;
+    position: absolute;
+    transform: scale(1.1);
+    width: 100%;
+    z-index: 1;
+}
+
+.principal__postagens--imagem img:last-child {
+    height: 160px;
+    object-fit: contain;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+
+.principal__postagens--descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 15px;
+    position: relative;
+}
+
+.principal__postagens--descricao a {
+    text-decoration: none;
+    color: var(--fonte-cor);
+}
+
+.principal__postagens--descricao a:hover {
+    color: var(--azul-link);
+}
+
+.principal__postagens--descricao-autoria {
+    display: flex;
+    align-items: center;
+}
+
+.principal__postagens--descricao-autoria img {
+    border-radius: 25px;
+    height: 25px;
+}
+
+.principal__postagens--descricao-autoria p {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+.principal__postagens--descricao-titulos h4 {
+	display: inline-block;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.principal__postagens--descricao-titulos p {
+    font-size: 15px;
+    font-weight: 300;
+    overflow: hidden;
+    padding-right: 40px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.principal__postagens--descricao-estatisticas p {
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.principal__postagens--descricao-estatisticas img {
+    height: 12px;
+}
+
+.principal__postagens-recentes--titulo,
+.principal__cursos-criados--titulo {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.principal__postagens-recentes--titulo h4,
+.principal__cursos-criados--titulo h4 {
+    color: var(--cinza-azulado);
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.principal__cursos-criados--titulo {
+    border-top: 1px solid var(--cinza-azulado);
+}
+
+.principal__postagens--erro img,
+.principal__cursos-criados--erro img {
+	height: 280px;
+	margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.principal__postagens--erro p,
+.principal__cursos-criados--erro p {
+	font-weight: 600;
+	margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+
+/* ====== CONFIGURAÇÕES DA POSTAGEM ====== */
+
+.principal__postagens--descricao-configuracoes {
+    position: absolute;
+    right: 0;
+}
+
+.principal__postagens--descricao-configuracoes li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.principal__postagens--descricao-configuracoes a {
+    color: var(--fonte-cor);
+    font-weight: 500;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+.principal__postagens--descricao-configuracoes a:hover {
+    color: var(--azul-marca);
+}
+
+.principal__postagens--descricao-configuracoes i {
+	margin-right: 5px;
+}
+
+
+
+/* ====== CURSOS DO USUÁRIO ====== */
+
+.principal__cursos-criados--cursos {
+	margin-bottom: 50px;
+}
+
+.principal__cursos-item {
+    background-color: var(--cinza-claro-fundo);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 15px;
+    position: relative;
+}
+
+.principal__cursos-item:hover {
+    scale: 1.025;
+}
+
+.principal__cursos-item--imagem img {
+    object-fit: contain;
+    width: 100%;
+}
+
+.principal__cursos-item--corpo h6 {
+    display: -webkit-box;
+    font-weight: 700;
+    overflow: hidden;
+    text-align: center;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.principal__cursos-item--corpo-autoria {
+    align-items: center;
+    display: flex;
+    margin: 15px 0;
+}
+
+.principal__cursos-item--corpo-autoria img {
+    border-radius: 25px;
+    height: 25px;
+}
+
+.principal__cursos-item--corpo-autoria a {
+    color: var(--fonte-cor);
+    text-decoration: none;
+}
+
+.principal__cursos-item--corpo-autoria a:hover {
+    color: var(--azul-link);
+}
+
+.principal__cursos-item--corpo-autoria p {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+
+/* ====== CONFIGURAÇÕES DO CURSO ====== */
+
+.principal__cursos--descricao-configuracoes {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.principal__cursos--descricao-configuracoes li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.principal__cursos--descricao-configuracoes a {
+    color: var(--fonte-cor);
+    font-weight: 500;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+.principal__cursos--descricao-configuracoes a:hover {
+    color: var(--azul-marca);
+}
+
+.principal__cursos--descricao-configuracoes i {
+    margin-right: 5px;
+}
