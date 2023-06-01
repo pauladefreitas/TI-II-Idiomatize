@@ -1,5 +1,9 @@
 # Idiomatize
 
+<p align="center">
+<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+</p>
+
 ## Descrição
 Idiomatize é uma plataforma online idealizada para o aprendizado de línguas. Ela oferece uma variedade de recursos e ferramentas para ajudar os usuários a aprimorar suas habilidades linguísticas de forma interativa e envolvente.
 
